@@ -4,10 +4,10 @@ from django.db import models
 class Products(models.Model):
     nombre = models.CharField(max_length=60)
     precio = models.IntegerField()
-    cantidad = models.IntegerField()
+    existencia = models.IntegerField()
     descripcion = models.CharField(max_length=200)
-    imagen = models.ImageField()
+    categoria = models.CharField(max_length=20)
+    
 
     def __str__(self):
         return self.nombre
-        
