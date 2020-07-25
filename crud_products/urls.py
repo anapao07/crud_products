@@ -19,5 +19,7 @@ from app_products import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.index,name='index'),
+    path('index.html',views.index,name='index'),
     path('api/',include('app_products.urls')),
 ]

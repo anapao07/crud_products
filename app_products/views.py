@@ -3,6 +3,9 @@ from rest_framework import viewsets
 from .models import Products
 from .serializers import ProductsSerializer
 
+def index(request):
+    return render(request,'app_products/index.html')
+
 
 
 class ProductsViewSet(viewsets.ModelViewSet):
