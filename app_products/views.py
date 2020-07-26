@@ -23,6 +23,27 @@ def create(request):
     }
     return render(request, 'app_products/create.html', context)
 
+def productEdit(request,id):
+    queryset = Products.objects.get(id=id)
+    if request.method == 'GET':
+        form = ProductsForm(instance=queryset)
+        context = {
+            'form': form
+        }
+    else:
+        form = ProductsForm(request.POST, instance= queryset)
+        context = {
+            'form': form
+        }
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    return render(request, 'app_products/create.html', context)
+
+def productDelete(request,id):
+    queryset = Products.objects.get(id=id)
+    queryset.delete()
+    return redirect('index')
 
 class ProductsViewSet(viewsets.ModelViewSet):
     serializer_class = ProductsSerializer
