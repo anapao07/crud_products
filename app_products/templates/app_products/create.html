@@ -1,0 +1,10 @@
+{% extends 'app_products/index.html' %} {% block title %}
+<div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Agregar Nuevo Producto</h6>
+</div>
+{% endblock %} {% block container %}
+<form class="form" method="POST">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock %}
