@@ -22,5 +22,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('index.html', views.index, name='index'),
     path('create.html', views.create, name='create'),
+    path('productEdit/<int:id>/',views.productEdit, name='productEdit'),
+    path('productDelete/<int:id>/',views.productDelete, name='productDelete'),
     path('api/', include('app_products.urls')),
 ]
+#  path('deleteevaluator/<int:id>/', views.deleteevaluator, name='deleteevaluator'),
