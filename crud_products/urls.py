@@ -16,14 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app_products import views
+from app_products.views import ProductsAppView 
 
+products_app_view = ProductsAppView()
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('index.html', views.index, name='index'),
-    path('create.html', views.create, name='create'),
-    path('productEdit/<int:id>/',views.productEdit, name='productEdit'),
-    path('productDelete/<int:id>/',views.productDelete, name='productDelete'),
+    path('', products_app_view.index, name='index'),
+    path('index.html', products_app_view.index, name='index'),
+    path('create.html', products_app_view.create, name='create'),
+    path('productEdit/<int:id>/',products_app_view.productEdit, name='productEdit'),
+    path('productDelete/<int:id>/',products_app_view.productDelete, name='productDelete'),
     path('api/', include('app_products.urls')),
 ]
 #  path('deleteevaluator/<int:id>/', views.deleteevaluator, name='deleteevaluator'),
