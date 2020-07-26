@@ -23,12 +23,34 @@
         <thead>
           <tr>
             <th scope="col">Nombre</th>
+            <th scope="col">Codigo</th>
             <th scope="col">Precio</th>
             <th scope="col">Descripción</th>
-            <th scope="col">Ctegoria</th>
+            <th scope="col">Categoria</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
+          {% if ProdustList %}
+          {% for product in ProdustList %}
+          <tr>
+            <td>{{ product.nombre }}</td>
+            <td>{{ product.codigo }}</td>
+            <td>{{ product.precio }}</td>
+            <td>{{ product.descripcion }}</td>
+            <td>{{ product.categoria }}</td>
+            <td>
+              <a type="button" href="create.html" class="btn btn-info">Editar</a>
+            </td>
+            <td> <a type="button" href="create.html" class="btn btn-danger">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+
+          {% else %}
+          <h1>No Existen Registros</h1>
+          {% endif %}
         </tbody>
       </table>
     </div>
