@@ -6,7 +6,9 @@ from .forms import ProductsForm
 
 
 def index(request):
-    return render(request, 'app_products/index.html')
+    queryset = Products.objects.all()
+    context = {'ProdustList': queryset}
+    return render(request, 'app_products/index.html',context)
 
 
 def create(request):
