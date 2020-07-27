@@ -40,15 +40,16 @@ sudo pip3 install virtualenv
 ### Steps to Start Project
 
 
-###  1.- Clone Repository
+####  1.- Clone Repository
 ```
 git clone https://github.com/anapao07/crud_products.git
 
 cd crud_products
 ```
-#### 2.- Create Virtual Environment
+#### 2.- Create and Activate Virtual Environment
 ```
 virtualenv -p python3.8 crudenv
+source crudenv/bin/activate
 ```
 
 #### 3.- Install Requirements
